@@ -1,0 +1,448 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CareerPath AI - My Project</title>
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Link JavaScript -->
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <h1>CareerPath AI</h1>
+        <p>Discover Your Future With Artificial Intelligence</p>
+    </header>
+
+    <main>
+        <h2>Welcome to CareerPath AI</h2>
+        <p>Your Smart AI-Based Career Guidance Platform</p>
+
+        <button onclick="showMessage()">Get Started</button>
+    </main>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CareerPath AI - AI Career Guidance</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- NAVIGATION BAR -->
+    <header class="navbar">
+        <a href="#" class="logo" onclick="showPage('home')">
+            🎓 CareerPath <span>AI</span>
+        </a>
+
+        <nav id="navigation">
+            <a href="#" onclick="showPage('home')">Home</a>
+            <a href="#" onclick="showPage('features')">Features</a>
+            <a href="#" onclick="showPage('reviews')">Reviews</a>
+            <a href="#" onclick="showPage('login')" id="loginNav">Login</a>
+            <a href="#" onclick="showPage('register')" id="registerNav" class="nav-button">Register</a>
+            <a href="#" onclick="showPage('profile')" id="profileNav" hidden>My Profile</a>
+            <a href="#" onclick="logout()" id="logoutNav" hidden>Logout</a>
+            <a href="#" onclick="showPage('admin')" id="adminNav" hidden>Admin</a>
+        </nav>
+    </header>
+
+    <!-- HOME PAGE -->
+    <section id="home" class="page active">
+
+        <div class="hero">
+            <div class="hero-content">
+                <span class="tag">✨ AI POWERED CAREER GUIDANCE</span>
+
+                <h1>Discover Your Future<br>
+                    With <span>CareerPath AI</span>
+                </h1>
+
+                <p>
+                    Find the right career based on your interests,
+                    education, skills and passion. Get personalized
+                    career recommendations and roadmaps.
+                </p>
+
+                <button onclick="showPage('register')" class="primary-btn">
+                    Get Started →
+                </button>
+
+                <button onclick="showPage('login')" class="secondary-btn">
+                    Student Login
+                </button>
+            </div>
+
+            <div class="hero-image">
+                <div class="brain">🧠</div>
+                <h2>Your Future Starts Here</h2>
+                <p>Learn • Explore • Achieve</p>
+            </div>
+        </div>
+
+        <!-- WEBSITE STATISTICS -->
+        <div class="stats">
+            <div class="stat-card">
+                <h2 id="totalUsers">0</h2>
+                <p>Registered Students</p>
+            </div>
+
+            <div class="stat-card">
+                <h2 id="activeUsers">0</h2>
+                <p>Active Users</p>
+            </div>
+
+            <div class="stat-card">
+                <h2 id="totalReviews">0</h2>
+                <p>Student Reviews</p>
+            </div>
+
+            <div class="stat-card">
+                <h2>AI</h2>
+                <p>Smart Guidance</p>
+            </div>
+        </div>
+
+        <!-- FEATURES -->
+        <div class="section" id="featureSection">
+            <h2>Explore Our Features</h2>
+            <p class="subtitle">Everything you need to plan your future.</p>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">👨‍🎓</div>
+                    <h3>Student Profile</h3>
+                    <p>Create your profile and enter your education details.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>AI Career Guidance</h3>
+                    <p>Explore careers that match your interests and skills.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🗺️</div>
+                    <h3>Career Roadmap</h3>
+                    <p>Get a step-by-step plan for your future career.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3>Course Guidance</h3>
+                    <p>Discover useful courses and learning opportunities.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>Progress Tracking</h3>
+                    <p>Track your learning and career development.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">⭐</div>
+                    <h3>Student Reviews</h3>
+                    <p>Share your experience and help other students.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REGISTRATION PAGE -->
+    <section id="register" class="page form-page">
+        <form class="form-card" id="registerForm">
+            <div class="form-icon">🎓</div>
+            <h2>Create Student Account</h2>
+            <p>Register to discover your career opportunities.</p>
+
+            <label>Full Name</label>
+            <input type="text" id="regName" placeholder="Enter your full name" required>
+
+            <label>Email Address</label>
+            <input type="email" id="regEmail" placeholder="Enter your email" required>
+
+            <label>Mobile Number</label>
+            <input type="tel" id="regPhone" placeholder="Enter mobile number" required>
+
+            <label>Education Level</label>
+            <select id="regEducation" required>
+                <option value="">Select education</option>
+                <option>10th</option>
+                <option>Intermediate</option>
+                <option>Diploma</option>
+                <option>Undergraduate</option>
+                <option>Postgraduate</option>
+            </select>
+
+            <label>Password</label>
+            <input type="password" id="regPassword" placeholder="Create password" minlength="8" required>
+
+            <label>Confirm Password</label>
+            <input type="password" id="confirmPassword" placeholder="Confirm password" required>
+
+            <button type="submit" class="primary-btn full-btn">
+                Create Account
+            </button>
+
+            <p>Already have an account?
+                <a href="#" onclick="showPage('login')">Login here</a>
+            </p>
+        </form>
+    </section>
+
+    <!-- LOGIN PAGE -->
+    <section id="login" class="page form-page">
+        <form class="form-card" id="loginForm">
+            <div class="form-icon">🔐</div>
+            <h2>Welcome Back!</h2>
+            <p>Login to continue your career journey.</p>
+
+            <label>Email Address</label>
+            <input type="email" id="loginEmail" placeholder="Enter email" required>
+
+            <label>Password</label>
+            <input type="password" id="loginPassword" placeholder="Enter password" required>
+
+            <button type="submit" class="primary-btn full-btn">
+                Login
+            </button>
+
+            <p>Don't have an account?
+                <a href="#" onclick="showPage('register')">Register here</a>
+            </p>
+        </form>
+    </section>
+
+    <!-- STUDENT PROFILE -->
+    <section id="profile" class="page section">
+        <h2>My Student Profile</h2>
+
+        <div class="profile-card">
+            <div class="avatar">👤</div>
+            <h2 id="profileName">Student Name</h2>
+            <p id="profileEmail">student@email.com</p>
+            <p id="profileEducation">Education</p>
+
+            <button class="primary-btn" onclick="showPage('studentDetails')">
+                Update Career Details
+            </button>
+
+            <button class="secondary-btn" onclick="logout()">
+                Logout
+            </button>
+        </div>
+
+        <h2>My Dashboard</h2>
+
+        <div class="feature-grid">
+            <div class="feature-card" onclick="showPage('studentDetails')">
+                <div class="feature-icon">📝</div>
+                <h3>Student Details</h3>
+                <p>Enter your interests and skills.</p>
+            </div>
+
+            <div class="feature-card" onclick="showPage('recommendations')">
+                <div class="feature-icon">🤖</div>
+                <h3>Career Recommendations</h3>
+                <p>Find suitable careers.</p>
+            </div>
+
+            <div class="feature-card" onclick="showPage('roadmap')">
+                <div class="feature-icon">🗺️</div>
+                <h3>Career Roadmap</h3>
+                <p>Explore your career path.</p>
+            </div>
+
+            <div class="feature-card" onclick="showPage('reviews')">
+                <div class="feature-icon">⭐</div>
+                <h3>Reviews & Feedback</h3>
+                <p>Share your experience.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- STUDENT DETAILS -->
+    <section id="studentDetails" class="page form-page" style="display:flex; gap:20px;">
+        <form class="form-card" id="studentForm">
+            <h2>Student Career Assessment</h2>
+            <p>Enter your information to explore career options.</p>
+
+            <label>Age</label>
+            <input type="number" id="studentAge" min="10" max="100" required>
+
+            <label>Current Course / Class</label>
+            <input type="text" id="studentCourse" placeholder="Example: B.Tech CSE" required>
+
+            <label>Academic Percentage / CGPA</label>
+            <input type="text" id="studentMarks" placeholder="Example: 85%">
+
+            <label>Favourite Subjects</label>
+            <input type="text" id="studentSubjects" placeholder="Maths, Science, Computer Science" required>
+
+            <label>Your Interests</label>
+            <select id="studentInterest" required>
+                <option value="">Choose your interest</option>
+                <option>Technology</option>
+                <option>Medicine</option>
+                <option>Business</option>
+                <option>Arts and Design</option>
+                <option>Science and Research</option>
+                <option>Government Services</option>
+                <option>Finance</option>
+            </select>
+
+            <label>Your Skills</label>
+            <input type="text" id="studentSkills" placeholder="Programming, Communication, Creativity">
+
+            <label>Career Goal</label>
+            <select id="studentGoal" required>
+                <option value="">Select career goal</option>
+                <option>Government Job</option>
+                <option>Private Job</option>
+                <option>Entrepreneurship</option>
+                <option>Higher Education</option>
+                <option>Research</option>
+                <option>Not Sure Yet</option>
+            </select>
+
+            <button type="submit" class="primary-btn full-btn">
+                Generate Career Guidance →
+            </button>
+        </form>
+        
+        <div class="form-card" style="flex:1;">
+  <h2>Find My Course</h2>
+  <p>Enter your information to explore courses.</p>
+  <label>Your Interests</label>
+  <input type="text" id="courseInput" placeholder="Ex: computers, drawing" style="width:100%; padding:10px; box-sizing:border-box;">
+  <br><br>
+  <button type="button" onclick="findCourse()" class="primary-btn full-btn">Find My Course</button>
+  <p id="courseResult"></p>
+</div>
+    </section>
+
+    <!-- RECOMMENDATIONS -->
+    <section id="recommendations" class="page section">
+        <h2>🤖 Your Career Recommendations</h2>
+        <p class="subtitle">Explore career paths that may suit your profile.</p>
+
+        <div id="careerResults" class="feature-grid">
+            <p>Complete your student assessment to see recommendations.</p>
+        </div>
+
+        <button class="primary-btn" onclick="showPage('roadmap')">
+            View Career Roadmap →
+        </button>
+    </section>
+
+    <!-- ROADMAP -->
+    <section id="roadmap" class="page section">
+        <h2>🗺️ Your Career Roadmap</h2>
+        <p class="subtitle">Follow these steps to prepare for your future.</p>
+
+        <div id="roadmapContent" class="roadmap">
+            <p>Generate your career recommendations to explore your roadmap.</p>
+        </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section id="reviews" class="page section">
+        <h2>⭐ Reviews & Feedback</h2>
+        <p class="subtitle">Share your experience with CareerPath AI.</p>
+
+        <form class="form-card review-form" id="reviewForm">
+            <label>Rating</label>
+            <select id="reviewRating" required>
+                <option value="5">★★★★★ Excellent</option>
+                <option value="4">★★★★ Very Good</option>
+                <option value="3">★★★ Good</option>
+                <option value="2">★★ Average</option>
+                <option value="1">★ Poor</option>
+            </select>
+
+            <label>Your Feedback</label>
+            <textarea id="reviewMessage" placeholder="Write your feedback here..." required></textarea>
+
+            <button type="submit" class="primary-btn full-btn">
+                Submit Review
+            </button>
+        </form>
+
+        <h2>Student Experiences</h2>
+        <div id="reviewList" class="feature-grid"></div>
+    </section>
+
+    <!-- ADMIN DASHBOARD -->
+    <section id="admin" class="page section">
+        <h2>📊 Admin Dashboard</h2>
+        <p class="subtitle">Website user statistics and feedback.</p>
+
+        <div class="stats">
+            <div class="stat-card">
+                <h2 id="adminTotalUsers">0</h2>
+                <p>Total Registered Students</p>
+            </div>
+
+            <div class="stat-card">
+                <h2 id="adminActiveUsers">0</h2>
+                <p>Active Users</p>
+            </div>
+
+            <div class="stat-card">
+                <h2 id="adminTotalReviews">0</h2>
+                <p>Total Reviews</p>
+            </div>
+        </div>
+
+        <h2>Registered Students</h2>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Education</th>
+                    </tr>
+                </thead>
+                <tbody id="userTable"></tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <h2>🎓 CareerPath AI</h2>
+        <p>Discover your future. Build your career.</p>
+        <p>© 2026 CareerPath AI. All Rights Reserved.</p>
+    </footer>
+    <script>
+async function findCourse() {
+  let interest = document.getElementById("courseInput").value;
+  let response = await fetch("http://localhost:3000/api/find-course", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ interest: interest })
+  });
+  let data = await response.json();
+  document.getElementById("courseResult").innerText = data.course;
+}
+</script> 
+
+</body>
+</html>
